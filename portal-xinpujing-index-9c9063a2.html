@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识库 · 澳门新葡京 | portal-xinpujing.com</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f9f6f0;
+      font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+      color: #2e2a27;
+      line-height: 1.75;
+      padding: 2.5rem 1.5rem 4rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #3c352f;
+    }
+    h1 {
+      font-size: 2.2rem;
+      border-left: 6px solid #b8997a;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin: 2.5rem 0 1rem;
+      border-bottom: 1px dashed #d9cdbe;
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.6rem;
+      color: #5e5248;
+    }
+
+    .hero {
+      background: #efe9e0;
+      padding: 2.2rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0 2.2rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+    }
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 700px;
+    }
+
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.6rem;
+      margin: 2rem 0;
+    }
+    .dir-card {
+      background: #fefcf9;
+      border: 1px solid #e6ddd2;
+      padding: 1.4rem 1.2rem;
+      border-radius: 18px;
+      transition: all 0.15s;
+    }
+    .dir-card:hover {
+      border-color: #b8997a;
+      background: #fcf8f2;
+      box-shadow: 0 4px 14px rgba(140, 110, 80, 0.06);
+    }
+    .dir-card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #5b4b3c;
+    }
+    .dir-card p {
+      font-size: 0.95rem;
+      color: #4f473f;
+      margin-top: 0.3rem;
+    }
+
+    .info-note {
+      background: #f4efe7;
+      border-left: 6px solid #b8997a;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+    .info-note strong {
+      color: #3c2f26;
+    }
+    .info-note a {
+      color: #7b5f46;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8997a;
+      transition: border 0.2s;
+    }
+    .info-note a:hover {
+      border-bottom: 2px solid #7b5f46;
+    }
+
+    .faq-block {
+      margin: 2.8rem 0 1.5rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e3d9ce;
+      padding: 1rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 600;
+      color: #3f352e;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      padding-left: 1rem;
+      color: #4f453c;
+    }
+
+    .related-section {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0d5c8;
+    }
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+      margin: 1rem 0;
+    }
+    .related-tags span {
+      background: #f0e9e0;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.92rem;
+      color: #4d4036;
+    }
+
+    .footer-meta {
+      margin-top: 3.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7a6e63;
+    }
+    a {
+      color: #7b5f46;
+      text-decoration: none;
+      border-bottom: 1px dotted #cbbaa8;
+    }
+    a:hover {
+      border-bottom: 1px solid #8a6f57;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.7rem; padding-left: 0.9rem; }
+      .hero { padding: 1.5rem 1.2rem; }
+      .directory-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📖 知识库 · 澳门新葡京</h1>
+  <p style="margin-top:0.2rem; color:#6b5e53;">快速识别网站用途 · 信息目录与提示</p>
+
+  <div class="hero">
+    <p>初次来到 <strong>portal-xinpujing.com</strong>，您可能想了解这个站点提供什么、是否与澳门新葡京有关。下面以目录形式整理了网站的核心功能、知识来源以及使用时需要注意的要点，方便您按需查阅。</p>
+  </div>
+
+  <h2>📂 目录索引</h2>
+  <div class="directory-grid">
+    <div class="dir-card">
+      <h3>🔍 站点头绪</h3>
+      <p>解释 portal-xinpujing.com 的定位——并非官方入口，而是信息聚合与介绍型页面。</p>
+    </div>
+    <div class="dir-card">
+      <h3>📌 关联说明</h3>
+      <p>梳理<b>澳门新葡京</b>相关内容，说明本站展示资讯、背景及用户常问的几类问题。</p>
+    </div>
+    <div class="dir-card">
+      <h3>⚠️ 使用提醒</h3>
+      <p>浏览时请留意信息来源，本站仅作知识参考，不涉及任何业务代办或引导。</p>
+    </div>
+    <div class="dir-card">
+      <h3>📑 相关资源</h3>
+      <p>推荐进一步阅读的资料与对外链接，帮助您快速判断是否满足自己的需求。</p>
+    </div>
+  </div>
+
+  <h2>🧭 说明区</h2>
+  <p>这个页面是 portal-xinpujing.com 的介绍页，旨在让用户在最短时间内理解网站的性质与内容轮廓。我们围绕<strong>澳门新葡京</strong>这一关键词整理公开可见的知识碎片——包括品牌背景、常见疑问、以及访问时可以留意的细节。您可以将本页视为一个轻量级知识地图，而非官方渠道。</p>
+  <p>如果您想直接浏览具体介绍，可以前往 <a href="https://portal-xinpujing.com">澳门新葡京</a> 的专属页面，那里汇集了更完整的说明与整理信息。</p>
+
+  <div class="info-note">
+    <strong>💡 提示区</strong><br>
+    · 本站所有内容均基于公开信息整理，不构成任何形式的推荐或引导。<br>
+    · 部分链接指向外部资源，请自行辨别内容的时效性与准确性。<br>
+    · 如果您是第一次接触 <strong>澳门新葡京</strong>，建议先从“FAQ摘要”部分快速了解常见问题，再决定是否需要深入阅读。<br>
+    · 使用本页任何信息时，请遵守当地法律法规。
+  </div>
+
+  <h2>❓ FAQ 摘要</h2>
+  <div class="faq-block">
+    <div class="faq-item">
+      <div class="faq-q">Q1 · portal-xinpujing.com 是澳门新葡京的官方网站吗？</div>
+      <div class="faq-a">不是。本站是一个独立的介绍与知识汇集页面，不隶属于澳门新葡京或其运营方。请通过官方认证渠道确认权威信息。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q2 · 这个页面主要提供什么？</div>
+      <div class="faq-a">提供关于澳门新葡京的概述、常见疑问解答、以及相关资讯索引。定位是“知识库入口”，帮助用户快速了解背景并找到进一步查询的方向。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q3 · 信息多久更新一次？</div>
+      <div class="faq-a">无固定更新周期。站点内容依据公开资料的变化而调整，建议结合多方来源交叉比对。</div>
+    </div>
+  </div>
+
+  <div class="related-section">
+    <h3>📎 相关信息区</h3>
+    <p>下方列出与澳门新葡京相关的部分知识点与标签，供目录式参考：</p>
+    <div class="related-tags">
+      <span>澳门地标</span>
+      <span>综合度假村</span>
+      <span>品牌背景</span>
+      <span>公众认知</span>
+      <span>非官方信息</span>
+      <span>知识整理</span>
+    </div>
+    <p style="margin-top:0.8rem;">若您想进一步了解细节，不妨从 <a href="https://portal-xinpujing.com">澳门新葡京</a> 的介绍页面开始。那里收纳了比本目录更详尽的内容，可以帮助您获得更完整的认识。</p>
+  </div>
+
+  <div class="footer-meta">
+    — 知识库入口 · 温和指引 —
+  </div>
+
+</body>
+</html>
