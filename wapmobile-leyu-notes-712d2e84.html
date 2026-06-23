@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>乐鱼 · 轻量导航介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #1e2c3a;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 780px;
+            width: 100%;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #d5e3ec;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .top-nav .brand {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #147d8a;
+            letter-spacing: 0.5px;
+        }
+
+        .top-nav .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .top-nav .nav-links a {
+            text-decoration: none;
+            color: #2d4b5c;
+            transition: color 0.2s;
+            padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .top-nav .nav-links a:hover {
+            color: #1b8c9a;
+            border-bottom-color: #1b8c9a;
+        }
+
+        /* hero 区域 */
+        .hero {
+            background: linear-gradient(145deg, #e1f1f5, #cde6ed);
+            border-radius: 32px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 60, 80, 0.06);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #095a67;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.3px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #1f4755;
+            max-width: 600px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #0d5b69;
+            border: 1px solid #b3d4de;
+        }
+
+        /* 介绍卡片（核心介绍） */
+        .intro-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 50, 70, 0.04);
+            border: 1px solid #dcecf2;
+        }
+
+        .intro-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #115e6b;
+            margin-bottom: 0.75rem;
+            border-left: 5px solid #24a5b7;
+            padding-left: 0.9rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1rem;
+            color: #2f4553;
+        }
+
+        .intro-card .highlight-link {
+            font-weight: 500;
+            background: #e1f0f5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* 三个场景模块 (网格卡片) */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 4px 12px rgba(0, 55, 75, 0.04);
+            border: 1px solid #d2e4ed;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(20, 100, 120, 0.08);
+            border-color: #9ac9d7;
+        }
+
+        .scene-card .icon {
+            font-size: 2rem;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+            background: #ddedf4;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 16px;
+            color: #1a7d8c;
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0f5c6a;
+            margin-bottom: 0.5rem;
+        }
+
+        .scene-card p {
+            font-size: 0.93rem;
+            color: #365563;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-summary {
+            background: #f0f6fa;
+            border-radius: 28px;
+            padding: 1.6rem 2rem;
+            margin-bottom: 2.2rem;
+            border: 1px solid #c7dce7;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #0a5b69;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #c2d8e4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item .question {
+            font-weight: 500;
+            color: #134f5e;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .answer {
+            color: #385967;
+            font-size: 0.92rem;
+        }
+
+        /* 额外的提示区块 */
+        .tip-box {
+            background: white;
+            border-left: 5px solid #24a5b7;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #1c4a57;
+            box-shadow: 0 2px 8px rgba(0, 60, 80, 0.04);
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 1.5rem;
+            color: #5f7d8b;
+            font-size: 0.85rem;
+            border-top: 1px solid #d2e1ea;
+        }
+
+        a {
+            color: #167d8c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .intro-card, .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+            .scene-card {
+                padding: 1.3rem 1rem;
+            }
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .top-nav .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="brand">乐鱼</span>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section class="hero">
+        <h1>乐鱼 · 轻指引</h1>
+        <p>围绕内容主题整理的简要索引，适合快速浏览与参考。</p>
+        <span class="tagline">信息清晰 · 结构轻量</span>
+    </section>
+
+    <!-- 核心介绍 自然嵌入链接 -->
+    <section id="intro" class="intro-card">
+        <h2>关于这一主题</h2>
+        <p>
+            这里整合了与<strong>乐鱼</strong>相关的一些基础说明与模块指引。
+            以实用和简洁为出发点，整理了三个常见使用场景，以及一些经常被问到的问题摘要。
+            若想了解更多内容，可以前往 <a href="https://wapmobile-leyu.com" class="highlight-link">乐鱼</a> 页面查看完整信息。
+        </p>
+        <p>
+            本页作为轻量导航页，不替代原站详细内容，仅提供结构化的预览和快速跳转。
+        </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes" class="scenes-grid">
+        <div class="scene-card">
+            <div class="icon">📘</div>
+            <h3>信息查阅</h3>
+            <p>通过分类卡片快速定位你关注的部分，减少反复跳转，适合日常浏览与对比。</p>
+        </div>
+        <div class="scene-card">
+            <div class="icon">📌</div>
+            <h3>功能指引</h3>
+            <p>针对常用模块做了简要说明，帮助你了解基本操作和内容入口的位置。</p>
+        </div>
+        <div class="scene-card">
+            <div class="icon">🧩</div>
+            <h3>常见问答</h3>
+            <p>汇总了用户询问较多的问题，并给出简洁答案；更完整的 FAQ 可参考原站对应板块。</p>
+        </div>
+    </section>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <section id="faq" class="faq-summary">
+        <h3>❔ 常见说明摘要</h3>
+        <div class="faq-item">
+            <span class="question">这个页面和原站是什么关系？</span>
+            <span class="answer">本页为导航式介绍页，重点展示主题分类，不替代 <a href="https://wapmobile-leyu.com">乐鱼</a> 的完整内容。</span>
+        </div>
+        <div class="faq-item">
+            <span class="question">场景模块的划分依据是什么？</span>
+            <span class="answer">根据用户最常关注的方向：查阅、指引和问答，这样更容易按需跳转。</span>
+        </div>
+        <div class="faq-item">
+            <span class="question">移动端浏览体验如何？</span>
+            <span class="answer">采用响应式网格和适度间距，在手机和平板上均可获得舒适的阅读感受。</span>
+        </div>
+    </section>
+
+    <!-- 提示小卡片 -->
+    <div class="tip-box">
+        💡 提示：卡片内链接均指向原站对应板块，点击 <a href="https://wapmobile-leyu.com">乐鱼</a> 可直达首页。
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+        乐鱼 · 轻量导航页 &nbsp;|&nbsp; 内容仅供示意
+    </div>
+
+</div>
+</body>
+</html>
