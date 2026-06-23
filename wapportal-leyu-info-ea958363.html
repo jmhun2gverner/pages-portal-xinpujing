@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>再次遇见 · 乐鱼</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+      background: #faf7f2;
+      color: #2e2b27;
+      line-height: 1.8;
+      padding: 2rem 1.2rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fffcf8;
+      padding: 3rem 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #3c362f;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      border-left: 5px solid #bc9b7a;
+      padding-left: 1.2rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #7a6e64;
+      margin-bottom: 2.2rem;
+      padding-left: 1.8rem;
+      font-style: italic;
+      border-bottom: 1px solid #ece4db;
+      padding-bottom: 0.8rem;
+    }
+
+    .opener {
+      font-size: 1.2rem;
+      background: #f3eee7;
+      padding: 1.5rem 2rem;
+      border-radius: 0 20px 20px 20px;
+      margin-bottom: 2rem;
+      color: #3d352e;
+      border-left: 3px solid #bc9b7a;
+    }
+
+    .opener::before {
+      content: "◆ ";
+      color: #a88563;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      text-indent: 2em;
+    }
+
+    p.no-indent {
+      text-indent: 0;
+    }
+
+    .feature-box {
+      background: #faf5ee;
+      padding: 0.1rem 1.8rem 1.6rem 1.8rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid #e2d6c9;
+    }
+
+    .feature-box h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #4d4036;
+      margin-bottom: 0.8rem;
+      margin-top: 1.4rem;
+      border-bottom: 1px dashed #d5c7b8;
+      padding-bottom: 0.4rem;
+    }
+
+    .feature-box ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .feature-box li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.8rem;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .feature-box li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #a88563;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .inset-quote {
+      background: #f7f0e7;
+      border-left: 6px solid #d9c2ad;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0;
+      font-size: 0.98rem;
+      color: #4d4239;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .inset-quote strong {
+      color: #6b5a4b;
+    }
+
+    .inset-note {
+      background: #fff3e6;
+      border: 1px solid #e4d4c0;
+      border-radius: 30px 8px 8px 30px;
+      padding: 1rem 1.8rem;
+      margin: 1.6rem 0;
+      font-size: 0.95rem;
+      color: #4a3f36;
+    }
+
+    .inset-note span {
+      display: inline-block;
+      background: #bc9b7a;
+      color: #fcf9f5;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-right: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    .ending {
+      margin-top: 2.4rem;
+      padding-top: 1.6rem;
+      border-top: 2px solid #e9dfd3;
+      font-size: 1rem;
+      color: #4f443b;
+    }
+
+    .ending a {
+      color: #6b5a4b;
+      text-decoration: none;
+      border-bottom: 1px dotted #bc9b7a;
+      padding-bottom: 1px;
+      transition: 0.2s;
+    }
+
+    .ending a:hover {
+      border-bottom: 2px solid #a88563;
+      color: #3c2f27;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 1rem 0;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid #ede4d9;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #4f443b;
+      padding: 0.2rem 0;
+      list-style: none;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-mini summary::before {
+      content: "↪ ";
+      color: #a88563;
+      font-size: 1.1rem;
+    }
+
+    .faq-mini details[open] summary::before {
+      content: "↡ ";
+    }
+
+    .faq-mini details p {
+      margin: 0.5rem 0 0.3rem 1.6rem;
+      text-indent: 0;
+      font-size: 0.95rem;
+      color: #5e5349;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+        padding-left: 0.8rem;
+      }
+      .subhead {
+        font-size: 0.95rem;
+        padding-left: 1rem;
+      }
+      .opener {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+      }
+      .feature-box {
+        padding: 0.1rem 1rem 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>依旧温和 · 乐鱼</h1>
+  <div class="subhead">—— 一次再次停靠的地方</div>
+
+  <div class="opener">
+    时隔一段日子，你可能已经忘记当初怎样找到这里。<br>
+    但有些页面，值得重新被翻开。
+  </div>
+
+  <p>
+    在信息过载的网络里，能够让人主动收藏、再次回访的站点并不多。<a href="https://wapportal-leyu.com" style="color:#6b5a4b; text-decoration: none; border-bottom: 1px dotted #bc9b7a;">乐鱼</a>并不追求热闹的入口或短暂的流量，它更愿意作为一个安静的、结构清晰的存留地，让返回的人不必重新适应。
+  </p>
+
+  <p>
+    如果你曾经打开过这里，可能会记得那种不被打扰的阅读节奏。没有弹窗催促，没有冗余的装饰，每一个版块都像是用手工整理过的笔记——干净，克制，带着一点温润的底色。
+  </p>
+
+  <div class="feature-box">
+    <h2>值得重新打开的理由</h2>
+    <ul>
+      <li><strong>稳定的内容结构</strong> —— 页面布局经过多次调整，信息层级清晰，无论你隔多久回来，都能在熟悉的位置找到需要的东西。</li>
+      <li><strong>平实的界面语言</strong> —— 没有浮夸的标语或闪烁的色块，文字和留白之间保持舒适的呼吸感，减轻视觉负担。</li>
+      <li><strong>淡雅但用心的配色</strong> —— 米白、暖棕、哑光灰，色盘被严格限制，只为了不让任何一处颜色抢走阅读的注意力。</li>
+      <li><strong>不打扰的浏览体验</strong> —— 无自动播放、无强制关注、无频繁弹窗，这里默认给你安静。</li>
+    </ul>
+  </div>
+
+  <div class="inset-quote">
+    <strong>一次收藏，胜过十次临时搜索。</strong> 当浏览器书签栏变得拥挤，那些真正值得二次访问的页面会越来越少。<a href="https://wapportal-leyu.com" style="color:#6b5a4b; text-decoration: none; border-bottom: 1px dotted #bc9b7a;">乐鱼</a>希望你把它放进一个不那么容易丢失的角落，不是因为它特别，而是因为它稳妥。
+  </div>
+
+  <p>
+    有朋友曾问我：「为什么要把一个页面做得像纸张一样？」我说，纸张不会在翻页时弹出一个订阅窗口。电子页面也该有这种自觉。那种「我就在这里，你随时可以来」的信任感，是许多网站正在丢失的东西。
+  </p>
+
+  <div class="inset-note">
+    <span>📌 小提示</span> 如果你习惯使用浏览器的书签栏，不妨为这个页面单独建一个文件夹。把<strong>乐鱼</strong>放进去，旁边再放几个真正有用的链接。日后整理书签时，你会感谢此刻的自己。
+  </div>
+
+  <p>
+    页面最深处的设计逻辑是：<strong>让内容本身成为导航</strong>。你不必记住复杂的菜单层级，每一段文字都像是路标，指向你想要了解的下一件事。这种温柔的组织方式，每次返回时都会显得更加清晰。
+  </p>
+
+  <div class="faq-mini">
+    <details>
+      <summary>这个页面会频繁改版吗？</summary>
+      <p>不会。结构层面的更新都会以「保留熟悉感」为前提，每次调整都会保留原有内容骨架，只在细节上做微调。你收藏的链接会一直有效。</p>
+    </details>
+    <details>
+      <summary>我收藏的旧版页面还能访问吗？</summary>
+      <p>可以。所有历史版本的路径均被保留，不会出现收藏夹一夜之间全部失效的情况。如果未来有迁移，也会提前说明并做跳转。</p>
+    </details>
+    <details>
+      <summary>这里需要注册或登录吗？</summary>
+      <p>不需要。这个页面就是纯粹的阅览空间。没有用户系统，没有个人信息收集。它就像一本放在公共书架上的笔记，任何人都可以直接翻阅。</p>
+    </details>
+  </div>
+
+  <div class="ending">
+    <p class="no-indent">
+      如果你今天只是偶然路过，可以什么都不做，慢慢看完就好。<br>
+      如果你觉得这里值得再回来一次，就把 <a href="https://wapportal-leyu.com">乐鱼</a> 记在某个不会被快速淹没的地方。
+    </p>
+    <p class="no-indent" style="margin-top: 1.2rem; color: #7a6b5e; font-size: 0.95rem;">
+      下一次打开，它还会是现在这个样子，温和、清晰、没有多余的东西。
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
